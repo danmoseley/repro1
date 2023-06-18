@@ -79,6 +79,7 @@ namespace BenchmarksGame
 
         public static int RunBench5_Generated()
         {
+            Console.WriteLine("generated");
             var sequences = _sequences;
             var initialLength = sequences.Length;
             sequences = ReplaceRegex().Replace(sequences, "");
@@ -103,6 +104,7 @@ namespace BenchmarksGame
 
         public static int RunBench5_Compiled(RegexOptions options)
         {
+            Console.WriteLine("compiled");
             var sequences = _sequences;
             var initialLength = sequences.Length;
             sequences = Regex.Replace(sequences, ">.*\n|\n", "", options);
@@ -125,16 +127,16 @@ namespace BenchmarksGame
             return magicTask.Result;
         }
 
-        public static string Hash(string s)
-        {
-            //Convert the string into an array of bytes.
-            byte[] messageBytes = Encoding.UTF8.GetBytes(s);
+        //public static string Hash(string s)
+        //{
+        //    //Convert the string into an array of bytes.
+        //    byte[] messageBytes = Encoding.UTF8.GetBytes(s);
 
-            //Create the hash value from the array of bytes.
-            byte[] hashValue = SHA256.HashData(messageBytes);
+        //    //Create the hash value from the array of bytes.
+        //    byte[] hashValue = SHA256.HashData(messageBytes);
 
-            //Display the hash value to the console.
-            return Convert.ToHexString(hashValue);
-        }
+        //    //Display the hash value to the console.
+        //    return Convert.ToHexString(hashValue);
+        //}
     }
 }
