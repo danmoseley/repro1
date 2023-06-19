@@ -42,6 +42,8 @@ namespace BenchmarksGame
             {
                 "gen" => RunBench5_Generated(),
                 "reg" => RunBench5_Compiled(RegexOptions.Compiled),
+                "non" => RunBench5_Compiled(RegexOptions.None),
+                "nbt" => RunBench5_Compiled(RegexOptions.NonBacktracking),
                 _ => throw new Exception()
             };
         }
